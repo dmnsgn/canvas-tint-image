@@ -43,8 +43,6 @@ const context = getCanvasContext("2d", {
 | **color**   | DOMString         |         | A DOMString parsed as CSS <color> value |
 | **opacity** | number?           | 0.5     | Opacity of the tint between 0 and 1     |
 
-Type is inferred from the filename extension (jpg/jpeg) for `"image/jpeg"` and default to `"image/png"`.
-
 ## License
 
 MIT. See [license file](https://github.com/dmnsgn/canvas-tint-image/blob/master/LICENSE.md).
