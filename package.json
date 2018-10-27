@@ -1,0 +1,31 @@
+{
+  "name": "canvas-tint-image",
+  "version": "1.0.0",
+  "description": "A one trick pony package to tint an image with a canvas 2D context.",
+  "main": "index.js",
+  "scripts": {
+    "start": "budo demo.js --open --live"
+  },
+  "author": "Damien Seguin (https://dmnsgn.me)",
+  "license": "MIT",
+  "devDependencies": {
+    "async-preloader": "^4.1.0",
+    "budo": "^11.3.2",
+    "get-canvas-context": "^1.0.2"
+  },
+  "keywords": [
+    "canvas",
+    "image",
+    "tint",
+    "colors",
+    "cats"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmnsgn/canvas-tint-image.git"
+  },
+  "homepage": "https://github.com/dmnsgn/canvas-tint-image",
+  "bugs": {
+    "url": "https://github.com/dmnsgn/canvas-tint-image/issues"
+  }
+}
