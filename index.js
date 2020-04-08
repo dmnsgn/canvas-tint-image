@@ -1,13 +1,14 @@
-const getCanvasContext = require("get-canvas-context");
+const canvasContext = require("canvas-context");
 
 let context;
 
 function tintImage(image, color, opacity = 0.5) {
   if (!context) {
-    context = getCanvasContext("2d", {
+    const { context: c } = canvasContext("2d", {
       width: image.width,
-      height: image.height
+      height: image.height,
     });
+    context = c;
   } else {
     context.canvas.width = image.width;
     context.canvas.height = image.height;

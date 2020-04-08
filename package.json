@@ -8,10 +8,12 @@
   },
   "author": "Damien Seguin (https://dmnsgn.me)",
   "license": "MIT",
+  "dependencies": {
+    "canvas-context": "^2.0.0"
+  },
   "devDependencies": {
-    "async-preloader": "^4.1.0",
-    "budo": "^11.3.2",
-    "get-canvas-context": "^1.0.2"
+    "async-preloader": "^4.9.1",
+    "budo": "^11.6.3"
   },
   "keywords": [
     "canvas",
