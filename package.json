@@ -29,10 +29,10 @@
   "main": "index.js",
   "types": "types/index.d.ts",
   "dependencies": {
-    "canvas-context": "^2.0.0"
+    "canvas-context": "^3.0.1"
   },
   "devDependencies": {
-    "async-preloader": "^4.9.1",
+    "async-preloader": "^5.0.2",
     "core-js": "^3.10.1",
     "es-module-shims": "^0.10.4"
   },
