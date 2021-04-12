@@ -1,6 +1,6 @@
 {
   "name": "canvas-tint-image",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A one trick pony package to tint an image with a canvas 2D context.",
   "keywords": [
     "canvas",

@@ -46,7 +46,19 @@ const context = getCanvasContext("2d", {
 
 <!-- api-start -->
 
-Auto-generated API content.
+<a name="canvasTintImage"></a>
+
+## canvasTintImage(image, color, [opacity]) ⇒ <code>HTMLCanvasElement</code>
+
+Tint an image with a canvas 2D context.
+
+**Kind**: global function
+
+| Param     | Type                                                                             | Default          | Description                         |
+| --------- | -------------------------------------------------------------------------------- | ---------------- | ----------------------------------- |
+| image     | <code>CanvasImageSource</code>                                                   |                  | The image to tint                   |
+| color     | <code>string</code> \| <code>CanvasGradient</code> \| <code>CanvasPattern</code> |                  | A CSS <color> value                 |
+| [opacity] | <code>number</code>                                                              | <code>0.5</code> | Opacity of the tint between 0 and 1 |
 
 <!-- api-end -->
 
