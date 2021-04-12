@@ -1,11 +1,22 @@
-# canvas-tint-image [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
+# canvas-tint-image
 
-[![npm version](https://badge.fury.io/js/canvas-tint-image.svg)](https://www.npmjs.com/package/canvas-tint-image)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![npm version](https://img.shields.io/npm/v/canvas-tint-image)](https://www.npmjs.com/package/canvas-tint-image)
+[![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://www.npmjs.com/package/canvas-tint-image)
+[![npm minzipped size](https://img.shields.io/bundlephobia/minzip/canvas-tint-image)](https://www.npmjs.com/package/canvas-tint-image)
+[![dependencies](https://img.shields.io/david/dmnsgn/canvas-tint-image)](https://github.com/dmnsgn/canvas-tint-image/blob/main/package.json)
+[![types](https://img.shields.io/npm/types/canvas-tint-image)](https://github.com/microsoft/TypeScript)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-fa6673.svg)](https://conventionalcommits.org)
+[![styled with prettier](https://img.shields.io/badge/styled_with-Prettier-f8bc45.svg?logo=prettier)](https://github.com/prettier/prettier)
+[![linted with eslint](https://img.shields.io/badge/linted_with-ES_Lint-4B32C3.svg?logo=eslint)](https://github.com/eslint/eslint)
+[![license](https://img.shields.io/github/license/dmnsgn/canvas-tint-image)](https://github.com/dmnsgn/canvas-tint-image/blob/main/LICENSE.md)
 
 A one trick pony package to tint an image with a canvas 2D context.
 
-![](https://raw.githubusercontent.com/dmnsgn/canvas-tint-image/master/screenshot.gif)
+[![paypal](https://img.shields.io/badge/donate-paypal-informational?logo=paypal)](https://paypal.me/dmnsgn)
+[![coinbase](https://img.shields.io/badge/donate-coinbase-informational?logo=coinbase)](https://commerce.coinbase.com/checkout/56cbdf28-e323-48d8-9c98-7019e72c97f3)
+[![twitter](https://img.shields.io/twitter/follow/dmnsgn?style=social)](https://twitter.com/dmnsgn)
+
+![](https://raw.githubusercontent.com/dmnsgn/canvas-tint-image/main/screenshot.gif)
 
 ## Installation
 
@@ -13,18 +24,16 @@ A one trick pony package to tint an image with a canvas 2D context.
 npm install canvas-tint-image
 ```
 
-[![NPM](https://nodei.co/npm/canvas-tint-image.png)](https://nodei.co/npm/canvas-tint-image/)
-
 ## Usage
 
 ```js
-const tintImage = require("canvas-tint-image");
-const getCanvasContext = require("get-canvas-context");
-const AsyncPreloader = require("async-preloader").default;
+import canvasTintImage from "canvas-tint-image";
+import getCanvasContext from "get-canvas-context";
+import AsyncPreloader from "async-preloader";
 
 const context = getCanvasContext("2d", {
   width: 100,
-  height: 100
+  height: 100,
 });
 
 (async () => {
@@ -35,14 +44,12 @@ const context = getCanvasContext("2d", {
 
 ## API
 
-### `tintImage(image, color, opacity): HTMLCanvasElement`
+<!-- api-start -->
 
-| Option      | Type              | Default | Description                             |
-| ----------- | ----------------- | ------- | --------------------------------------- |
-| **image**   | CanvasImageSource |         | The image to tint                       |
-| **color**   | DOMString         |         | A DOMString parsed as CSS <color> value |
-| **opacity** | number?           | 0.5     | Opacity of the tint between 0 and 1     |
+Auto-generated API content.
+
+<!-- api-end -->
 
 ## License
 
-MIT. See [license file](https://github.com/dmnsgn/canvas-tint-image/blob/master/LICENSE.md).
+MIT. See [license file](https://github.com/dmnsgn/canvas-tint-image/blob/main/LICENSE.md).

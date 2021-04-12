@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      canvas-tint-image by Damien Seguin (https://github.com/dmnsgn)
+    </title>
+    <style>
+      :root {
+        --color-dark: #404040;
+        --color-light: #f2f2f2;
+        --color-accent: #fd5e62;
+      }
+
+      body {
+        margin: 0;
+        overscroll-behavior: none;
+        font-family: sans-serif;
+        color: var(--color-dark);
+        background-color: var(--color-light);
+      }
+
+      main {
+        padding: 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>canvas-tint-image</h1>
+    </main>
+    <script async src="web_modules/es-module-shims.js"></script>
+    <script src="web_modules/import-map.json" type="importmap"></script>
+
+    <script type="module">
+      import canvasTintImage from "./index.js";
+      import canvasContext from "canvas-context";
+      import AsyncPreloader from "async-preloader";
+
+      const { context, canvas } = canvasContext("2d");
+      canvas.style.width = "100%";
+
+      const count = 36;
+      const gridSize = 9;
+      let tint = true;
+
+      document.querySelector("main").appendChild(canvas);
+
+      function draw() {
+        tint = !tint;
+
+        const image = AsyncPreloader.items.get("cat");
+        const ratio = image.height / image.width;
+
+        const dWidth = window.innerWidth / gridSize;
+        canvas.height = Math.ceil(count / gridSize) * dWidth * ratio;
+
+        context.drawImage(image, 0, 0, dWidth, dWidth * ratio);
+
+        for (let i = 0; i < count; i++) {
+          context.drawImage(
+            tint
+              ? canvasTintImage(
+                  image,
+                  `hsl(${(360 * i) / count}, 100%, 50%)`,
+                  0.5
+                )
+              : image,
+            (i % gridSize) * dWidth,
+            ~~(i / gridSize) * dWidth,
+            dWidth,
+            dWidth * ratio
+          );
+        }
+      }
+
+      const onResize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      };
+
+      (async () => {
+        await AsyncPreloader.loadItem({
+          id: "cat",
+          src: "examples/image.jpg",
+        });
+
+        window.addEventListener("resize", onResize);
+        onResize();
+
+        draw();
+        setInterval(draw, 1000);
+      })();
+    </script>
+  </body>
+</html>

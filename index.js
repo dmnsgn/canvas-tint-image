@@ -1,8 +1,16 @@
-const canvasContext = require("canvas-context");
+import canvasContext from "canvas-context";
 
 let context;
 
-function tintImage(image, color, opacity = 0.5) {
+/**
+ * Tint an image with a canvas 2D context.
+ *
+ * @param {CanvasImageSource} image The image to tint
+ * @param {string | CanvasGradient | CanvasPattern} color A CSS <color> value
+ * @param {number} [opacity=0.5] Opacity of the tint between 0 and 1
+ * @returns {HTMLCanvasElement}
+ */
+function canvasTintImage(image, color, opacity = 0.5) {
   if (!context) {
     const { context: c } = canvasContext("2d", {
       width: image.width,
@@ -26,4 +34,4 @@ function tintImage(image, color, opacity = 0.5) {
   return context.canvas;
 }
 
-module.exports = tintImage;
+export default canvasTintImage;

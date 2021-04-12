@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "async-preloader": "./async-preloader.js",
+    "canvas-context": "./canvas-context.js",
+    "core-js": "./core-js.js",
+    "es-module-shims": "./es-module-shims.js"
+  }
+}

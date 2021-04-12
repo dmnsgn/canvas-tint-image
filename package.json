@@ -2,19 +2,6 @@
   "name": "canvas-tint-image",
   "version": "1.0.1",
   "description": "A one trick pony package to tint an image with a canvas 2D context.",
-  "main": "index.js",
-  "scripts": {
-    "start": "budo demo.js --open --live"
-  },
-  "author": "Damien Seguin (https://dmnsgn.me)",
-  "license": "MIT",
-  "dependencies": {
-    "canvas-context": "^2.0.0"
-  },
-  "devDependencies": {
-    "async-preloader": "^4.9.1",
-    "budo": "^11.6.3"
-  },
   "keywords": [
     "canvas",
     "image",
@@ -22,12 +9,35 @@
     "colors",
     "cats"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/dmnsgn/canvas-tint-image.git"
-  },
   "homepage": "https://github.com/dmnsgn/canvas-tint-image",
-  "bugs": {
-    "url": "https://github.com/dmnsgn/canvas-tint-image/issues"
+  "bugs": "https://github.com/dmnsgn/canvas-tint-image/issues",
+  "repository": "dmnsgn/canvas-tint-image",
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://paypal.me/dmnsgn"
+    },
+    {
+      "type": "individual",
+      "url": "https://commerce.coinbase.com/checkout/56cbdf28-e323-48d8-9c98-7019e72c97f3"
+    }
+  ],
+  "license": "MIT",
+  "author": "Damien Seguin (https://github.com/dmnsgn)",
+  "sideEffect": false,
+  "type": "module",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "canvas-context": "^2.0.0"
+  },
+  "devDependencies": {
+    "async-preloader": "^4.9.1",
+    "core-js": "^3.10.1",
+    "es-module-shims": "^0.10.4"
+  },
+  "engines": {
+    "node": ">=15.0.0",
+    "npm": ">=7.0.0"
   }
 }
