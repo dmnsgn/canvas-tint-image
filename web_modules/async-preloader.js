@@ -1,157 +1,4 @@
-import './common/esnext.reflect.metadata-c7323113.js';
-
-var __assign = function () {
-  __assign = Object.assign || function __assign(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-      s = arguments[i];
-
-      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-
-    return t;
-  };
-
-  return __assign.apply(this, arguments);
-};
-function __awaiter(thisArg, _arguments, P, generator) {
-  function adopt(value) {
-    return value instanceof P ? value : new P(function (resolve) {
-      resolve(value);
-    });
-  }
-
-  return new (P || (P = Promise))(function (resolve, reject) {
-    function fulfilled(value) {
-      try {
-        step(generator.next(value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-
-    function rejected(value) {
-      try {
-        step(generator["throw"](value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-
-    function step(result) {
-      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-    }
-
-    step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-}
-function __generator(thisArg, body) {
-  var _ = {
-    label: 0,
-    sent: function () {
-      if (t[0] & 1) throw t[1];
-      return t[1];
-    },
-    trys: [],
-    ops: []
-  },
-      f,
-      y,
-      t,
-      g;
-  return g = {
-    next: verb(0),
-    "throw": verb(1),
-    "return": verb(2)
-  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
-    return this;
-  }), g;
-
-  function verb(n) {
-    return function (v) {
-      return step([n, v]);
-    };
-  }
-
-  function step(op) {
-    if (f) throw new TypeError("Generator is already executing.");
-
-    while (_) try {
-      if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-      if (y = 0, t) op = [op[0] & 2, t.value];
-
-      switch (op[0]) {
-        case 0:
-        case 1:
-          t = op;
-          break;
-
-        case 4:
-          _.label++;
-          return {
-            value: op[1],
-            done: false
-          };
-
-        case 5:
-          _.label++;
-          y = op[1];
-          op = [0];
-          continue;
-
-        case 7:
-          op = _.ops.pop();
-
-          _.trys.pop();
-
-          continue;
-
-        default:
-          if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
-            _ = 0;
-            continue;
-          }
-
-          if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
-            _.label = op[1];
-            break;
-          }
-
-          if (op[0] === 6 && _.label < t[1]) {
-            _.label = t[1];
-            t = op;
-            break;
-          }
-
-          if (t && _.label < t[2]) {
-            _.label = t[2];
-
-            _.ops.push(op);
-
-            break;
-          }
-
-          if (t[2]) _.ops.pop();
-
-          _.trys.pop();
-
-          continue;
-      }
-
-      op = body.call(thisArg, _);
-    } catch (e) {
-      op = [6, e];
-      y = 0;
-    } finally {
-      f = t = 0;
-    }
-
-    if (op[0] & 5) throw op[1];
-    return {
-      value: op[0] ? op[1] : void 0,
-      done: true
-    };
-  }
-}
+import './common/web.url-db866b9f.js';
 
 /* Font Face Observer v3.3.1 - © Bram Stein - Damien Seguin. License: BSD-3-Clause */
 function _classCallCheck(instance, Constructor) {
@@ -729,15 +576,9 @@ _defineProperty(FontFaceObserver, "SUPPORTS_NATIVE_FONT_LOADING", null);
 
 _defineProperty(FontFaceObserver, "DEFAULT_TIMEOUT", 3000);
 
-var FontFaceObserver$1 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    'default': FontFaceObserver
-});
-
 /**
  * Keys used for the [[AsyncPreloader.loaders]]
  */
-
 var LoaderKey;
 
 (function (LoaderKey) {
@@ -753,7 +594,7 @@ var LoaderKey;
   LoaderKey["Font"] = "Font";
 })(LoaderKey || (LoaderKey = {}));
 
-var isSafari = navigator && navigator.userAgent.indexOf("Safari") > -1;
+const isSafari = navigator && navigator.userAgent.indexOf("Safari") > -1;
 /**
  * AsyncPreloader: assets preloader using ES2017 async/await and fetch.
  *
@@ -776,17 +617,13 @@ var isSafari = navigator && navigator.userAgent.indexOf("Safari") > -1;
  * if you need more than one instance.
  */
 
-var AsyncPreloader =
-/** @class */
-function () {
-  function AsyncPreloader() {
-    var _this = this; // Properties
+class AsyncPreloader {
+  constructor() {
+    // Properties
 
     /**
      * Object that contains the loaded items
      */
-
-
     this.items = new Map();
     /**
      * Default body method to be called on the Response from fetch if no body option is specified on the LoadItem
@@ -806,22 +643,8 @@ function () {
      * @returns {Promise<LoadedValue[]>} Resolve when all items are loaded, reject for any error
      */
 
-    this.loadItems = function (items) {
-      return __awaiter(_this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , Promise.all(items.map(this.loadItem))];
-
-            case 1:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
-        });
-      });
+    this.loadItems = async items => {
+      return await Promise.all(items.map(this.loadItem));
     };
     /**
      * Load a single item
@@ -831,27 +654,12 @@ function () {
      */
 
 
-    this.loadItem = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var extension, loaderKey, loadedItem;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              extension = AsyncPreloader.getFileExtension(item.src);
-              loaderKey = item.loader || AsyncPreloader.getLoaderKey(extension);
-              return [4
-              /*yield*/
-              , this["load" + loaderKey](item)];
-
-            case 1:
-              loadedItem = _a.sent();
-              this.items.set(item.id || item.src, loadedItem);
-              return [2
-              /*return*/
-              , loadedItem];
-          }
-        });
-      });
+    this.loadItem = async item => {
+      const extension = AsyncPreloader.getFileExtension(item.src);
+      const loaderKey = item.loader || AsyncPreloader.getLoaderKey(extension);
+      const loadedItem = await this[`load` + loaderKey](item);
+      this.items.set(item.id || item.src, loadedItem);
+      return loadedItem;
     }; // Special loaders
 
     /**
@@ -863,36 +671,12 @@ function () {
      */
 
 
-    this.loadManifest = function (src, key) {
-      if (key === void 0) {
-        key = "items";
-      }
-
-      return __awaiter(_this, void 0, void 0, function () {
-        var loadedManifest, items;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , this.loadJson({
-                src: src
-              })];
-
-            case 1:
-              loadedManifest = _a.sent();
-              items = AsyncPreloader.getProp(loadedManifest, key);
-              return [4
-              /*yield*/
-              , this.loadItems(items)];
-
-            case 2:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
-        });
+    this.loadManifest = async (src, key = "items") => {
+      const loadedManifest = await this.loadJson({
+        src
       });
+      const items = AsyncPreloader.getProp(loadedManifest, key);
+      return await this.loadItems(items);
     }; // Text loaders
 
     /**
@@ -903,29 +687,9 @@ function () {
      */
 
 
-    this.loadText = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var response;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , AsyncPreloader.fetchItem(item)];
-
-            case 1:
-              response = _a.sent();
-              return [4
-              /*yield*/
-              , response.text()];
-
-            case 2:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
-        });
-      });
+    this.loadText = async item => {
+      const response = await AsyncPreloader.fetchItem(item);
+      return await response.text();
     };
     /**
      * Load an item and parse the Response as json
@@ -935,29 +699,9 @@ function () {
      */
 
 
-    this.loadJson = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var response;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , AsyncPreloader.fetchItem(item)];
-
-            case 1:
-              response = _a.sent();
-              return [4
-              /*yield*/
-              , response.json()];
-
-            case 2:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
-        });
-      });
+    this.loadJson = async item => {
+      const response = await AsyncPreloader.fetchItem(item);
+      return await response.json();
     };
     /**
      * Load an item and parse the Response as arrayBuffer
@@ -967,29 +711,9 @@ function () {
      */
 
 
-    this.loadArrayBuffer = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var response;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , AsyncPreloader.fetchItem(item)];
-
-            case 1:
-              response = _a.sent();
-              return [4
-              /*yield*/
-              , response.arrayBuffer()];
-
-            case 2:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
-        });
-      });
+    this.loadArrayBuffer = async item => {
+      const response = await AsyncPreloader.fetchItem(item);
+      return await response.arrayBuffer();
     };
     /**
      * Load an item and parse the Response as blob
@@ -999,29 +723,9 @@ function () {
      */
 
 
-    this.loadBlob = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var response;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , AsyncPreloader.fetchItem(item)];
-
-            case 1:
-              response = _a.sent();
-              return [4
-              /*yield*/
-              , response.blob()];
-
-            case 2:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
-        });
-      });
+    this.loadBlob = async item => {
+      const response = await AsyncPreloader.fetchItem(item);
+      return await response.blob();
     };
     /**
      * Load an item and parse the Response as formData
@@ -1031,29 +735,9 @@ function () {
      */
 
 
-    this.loadFormData = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var response;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , AsyncPreloader.fetchItem(item)];
-
-            case 1:
-              response = _a.sent();
-              return [4
-              /*yield*/
-              , response.formData()];
-
-            case 2:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
-        });
-      });
+    this.loadFormData = async item => {
+      const response = await AsyncPreloader.fetchItem(item);
+      return await response.formData();
     }; // Custom loaders
 
     /**
@@ -1067,48 +751,21 @@ function () {
      */
 
 
-    this.loadImage = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var response, data, image;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , AsyncPreloader.fetchItem(item)];
-
-            case 1:
-              response = _a.sent();
-              return [4
-              /*yield*/
-              , response[item.body || this.defaultBodyMethod]()];
-
-            case 2:
-              data = _a.sent();
-              if (item.body) return [2
-              /*return*/
-              , data];
-              image = new Image();
-              return [4
-              /*yield*/
-              , new Promise(function (resolve, reject) {
-                image.addEventListener("load", function load() {
-                  image.removeEventListener("load", load);
-                  resolve(image);
-                });
-                image.addEventListener("error", function error() {
-                  image.removeEventListener("error", error);
-                  reject(image);
-                });
-                image.src = URL.createObjectURL(data);
-              })];
-
-            case 3:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
+    this.loadImage = async item => {
+      const response = await AsyncPreloader.fetchItem(item);
+      const data = await response[item.body || this.defaultBodyMethod]();
+      if (item.body) return data;
+      const image = new Image();
+      return await new Promise((resolve, reject) => {
+        image.addEventListener("load", function load() {
+          image.removeEventListener("load", load);
+          resolve(image);
         });
+        image.addEventListener("error", function error() {
+          image.removeEventListener("error", error);
+          reject(image);
+        });
+        image.src = URL.createObjectURL(data);
       });
     };
     /**
@@ -1122,56 +779,29 @@ function () {
      */
 
 
-    this.loadVideo = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var response, data, video;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , AsyncPreloader.fetchItem(item)];
-
-            case 1:
-              response = _a.sent();
-              return [4
-              /*yield*/
-              , response[item.body || this.defaultBodyMethod]()];
-
-            case 2:
-              data = _a.sent();
-              if (item.body) return [2
-              /*return*/
-              , data];
-              video = document.createElement("video");
-              return [4
-              /*yield*/
-              , new Promise(function (resolve, reject) {
-                video.addEventListener("canplaythrough", function canplaythrough() {
-                  video.removeEventListener("canplaythrough", canplaythrough);
-                  resolve(video);
-                });
-                video.addEventListener("error", function error() {
-                  video.removeEventListener("error", error);
-                  reject(video);
-                });
-
-                try {
-                  if (isSafari) throw "";
-                  video.srcObject = data;
-                } catch (error) {
-                  video.src = URL.createObjectURL(data);
-                }
-
-                video.load();
-              })];
-
-            case 3:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
+    this.loadVideo = async item => {
+      const response = await AsyncPreloader.fetchItem(item);
+      const data = await response[item.body || this.defaultBodyMethod]();
+      if (item.body) return data;
+      const video = document.createElement("video");
+      return await new Promise((resolve, reject) => {
+        video.addEventListener("canplaythrough", function canplaythrough() {
+          video.removeEventListener("canplaythrough", canplaythrough);
+          resolve(video);
         });
+        video.addEventListener("error", function error() {
+          video.removeEventListener("error", error);
+          reject(video);
+        });
+
+        try {
+          if (isSafari) throw "";
+          video.srcObject = data;
+        } catch (error) {
+          video.src = URL.createObjectURL(data);
+        }
+
+        video.load();
       });
     };
     /**
@@ -1185,58 +815,31 @@ function () {
      */
 
 
-    this.loadAudio = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var response, data, audio;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              return [4
-              /*yield*/
-              , AsyncPreloader.fetchItem(item)];
-
-            case 1:
-              response = _a.sent();
-              return [4
-              /*yield*/
-              , response[item.body || this.defaultBodyMethod]()];
-
-            case 2:
-              data = _a.sent();
-              if (item.body) return [2
-              /*return*/
-              , data];
-              audio = document.createElement("audio");
-              audio.autoplay = false;
-              audio.preload = "auto";
-              return [4
-              /*yield*/
-              , new Promise(function (resolve, reject) {
-                audio.addEventListener("canplaythrough", function canplaythrough() {
-                  audio.removeEventListener("canplaythrough", canplaythrough);
-                  resolve(audio);
-                });
-                audio.addEventListener("error", function error() {
-                  audio.removeEventListener("error", error);
-                  reject(audio);
-                });
-
-                try {
-                  if (isSafari) throw "";
-                  audio.srcObject = data;
-                } catch (error) {
-                  audio.src = URL.createObjectURL(data);
-                }
-
-                audio.load();
-              })];
-
-            case 3:
-              return [2
-              /*return*/
-              , _a.sent()];
-          }
+    this.loadAudio = async item => {
+      const response = await AsyncPreloader.fetchItem(item);
+      const data = await response[item.body || this.defaultBodyMethod]();
+      if (item.body) return data;
+      const audio = document.createElement("audio");
+      audio.autoplay = false;
+      audio.preload = "auto";
+      return await new Promise((resolve, reject) => {
+        audio.addEventListener("canplaythrough", function canplaythrough() {
+          audio.removeEventListener("canplaythrough", canplaythrough);
+          resolve(audio);
         });
+        audio.addEventListener("error", function error() {
+          audio.removeEventListener("error", error);
+          reject(audio);
+        });
+
+        try {
+          if (isSafari) throw "";
+          audio.srcObject = data;
+        } catch (error) {
+          audio.src = URL.createObjectURL(data);
+        }
+
+        audio.load();
       });
     };
     /**
@@ -1250,37 +853,17 @@ function () {
      */
 
 
-    this.loadXml = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var extension, response, data;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              if (!item.mimeType) {
-                extension = AsyncPreloader.getFileExtension(item.src);
-                item = __assign(__assign({}, item), {
-                  mimeType: AsyncPreloader.getMimeType(LoaderKey.Xml, extension)
-                });
-              }
+    this.loadXml = async item => {
+      if (!item.mimeType) {
+        const extension = AsyncPreloader.getFileExtension(item.src);
+        item = { ...item,
+          mimeType: AsyncPreloader.getMimeType(LoaderKey.Xml, extension)
+        };
+      }
 
-              return [4
-              /*yield*/
-              , AsyncPreloader.fetchItem(item)];
-
-            case 1:
-              response = _a.sent();
-              return [4
-              /*yield*/
-              , response.text()];
-
-            case 2:
-              data = _a.sent();
-              return [2
-              /*return*/
-              , AsyncPreloader.domParser.parseFromString(data, item.mimeType)];
-          }
-        });
-      });
+      const response = await AsyncPreloader.fetchItem(item);
+      const data = await response.text();
+      return AsyncPreloader.domParser.parseFromString(data, item.mimeType);
     };
     /**
      * Load a font via a FontFaceObserver instance
@@ -1290,27 +873,11 @@ function () {
      */
 
 
-    this.loadFont = function (item) {
-      return __awaiter(_this, void 0, void 0, function () {
-        var fontName, font;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              fontName = item.id;
-              font = new FontFaceObserver$1(fontName, item.options || {});
-              return [4
-              /*yield*/
-              , font.load()];
-
-            case 1:
-              _a.sent();
-
-              return [2
-              /*return*/
-              , fontName];
-          }
-        });
-      });
+    this.loadFont = async item => {
+      const fontName = item.id;
+      const font = new FontFaceObserver(fontName, item.options || {});
+      await font.load();
+      return fontName;
     };
   } // Utils
 
@@ -1322,9 +889,9 @@ function () {
    */
 
 
-  AsyncPreloader.fetchItem = function (item) {
+  static fetchItem(item) {
     return fetch(item.src, item.options || {});
-  };
+  }
   /**
    * Get an object property by its path in the form 'a[0].b.c' or ['a', '0', 'b', 'c'].
    * Similar to [lodash.get](https://lodash.com/docs/4.17.5#get).
@@ -1335,13 +902,11 @@ function () {
    */
 
 
-  AsyncPreloader.getProp = function (object, path) {
-    var p = Array.isArray(path) ? path : path.split(".").filter(function (index) {
-      return index.length;
-    });
+  static getProp(object, path) {
+    const p = Array.isArray(path) ? path : path.split(".").filter(index => index.length);
     if (!p.length) return object;
     return AsyncPreloader.getProp(object[p.shift()], p);
-  };
+  }
   /**
    * Get file extension from path
    *
@@ -1350,9 +915,9 @@ function () {
    */
 
 
-  AsyncPreloader.getFileExtension = function (path) {
+  static getFileExtension(path) {
     return (path.match(/[^\\/]\.([^.\\/]+)$/) || [null]).pop();
-  };
+  }
   /**
    * Retrieve loader key from extension (when the loader option isn't specified in the LoadItem)
    *
@@ -1361,12 +926,10 @@ function () {
    */
 
 
-  AsyncPreloader.getLoaderKey = function (extension) {
-    var loader = Array.from(AsyncPreloader.loaders).find(function (loader) {
-      return loader[1].extensions.includes(extension);
-    });
+  static getLoaderKey(extension) {
+    const loader = Array.from(AsyncPreloader.loaders).find(loader => loader[1].extensions.includes(extension));
     return loader ? loader[0] : LoaderKey.Text;
-  };
+  }
   /**
    * Retrieve mime type from extension
    *
@@ -1376,47 +939,46 @@ function () {
    */
 
 
-  AsyncPreloader.getMimeType = function (loaderKey, extension) {
-    var loader = AsyncPreloader.loaders.get(loaderKey);
+  static getMimeType(loaderKey, extension) {
+    const loader = AsyncPreloader.loaders.get(loaderKey);
     return loader.mimeType[extension] || loader.defaultMimeType;
-  };
-  /**
-   * Loader types and the extensions they handle
-   *
-   * Allows the omission of the loader key in a [[LoadItem.loader]] for some generic extensions
-   */
+  }
+
+}
+/**
+ * Loader types and the extensions they handle
+ *
+ * Allows the omission of the loader key in a [[LoadItem.loader]] for some generic extensions
+ */
 
 
-  AsyncPreloader.loaders = new Map().set(LoaderKey.Text, {
-    extensions: ["txt"]
-  }).set(LoaderKey.Json, {
-    extensions: ["json"]
-  }).set(LoaderKey.Image, {
-    extensions: ["jpeg", "jpg", "gif", "png", "webp"]
-  }).set(LoaderKey.Video, {
-    extensions: ["webm", "ogg", "mp4"]
-  }).set(LoaderKey.Audio, {
-    extensions: ["webm", "ogg", "mp3", "wav", "flac"]
-  }).set(LoaderKey.Xml, {
-    extensions: ["xml", "svg", "html"],
-    mimeType: {
-      xml: "text/xml",
-      svg: "image/svg+xml",
-      html: "text/html"
-    },
-    defaultMimeType: "text/xml"
-  }).set(LoaderKey.Font, {
-    extensions: ["woff2", "woff", "ttf", "otf", "eot"]
-  });
-  /**
-   * DOMParser instance for the XML loader
-   */
+AsyncPreloader.loaders = new Map().set(LoaderKey.Text, {
+  extensions: ["txt"]
+}).set(LoaderKey.Json, {
+  extensions: ["json"]
+}).set(LoaderKey.Image, {
+  extensions: ["jpeg", "jpg", "gif", "png", "webp"]
+}).set(LoaderKey.Video, {
+  extensions: ["webm", "ogg", "mp4"]
+}).set(LoaderKey.Audio, {
+  extensions: ["webm", "ogg", "mp3", "wav", "flac"]
+}).set(LoaderKey.Xml, {
+  extensions: ["xml", "svg", "html"],
+  mimeType: {
+    xml: "text/xml",
+    svg: "image/svg+xml",
+    html: "text/html"
+  },
+  defaultMimeType: "text/xml"
+}).set(LoaderKey.Font, {
+  extensions: ["woff2", "woff", "ttf", "otf", "eot"]
+});
+/**
+ * DOMParser instance for the XML loader
+ */
 
-  AsyncPreloader.domParser = new DOMParser();
-  return AsyncPreloader;
-}();
-
-var AsyncPreloaderInstance = new AsyncPreloader();
+AsyncPreloader.domParser = new DOMParser();
+const AsyncPreloaderInstance = new AsyncPreloader();
 
 export default AsyncPreloaderInstance;
 export { AsyncPreloader };
