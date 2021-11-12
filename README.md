@@ -2,8 +2,8 @@
 
 [![npm version](https://img.shields.io/npm/v/canvas-tint-image)](https://www.npmjs.com/package/canvas-tint-image)
 [![stability-stable](https://img.shields.io/badge/stability-stable-green.svg)](https://www.npmjs.com/package/canvas-tint-image)
-[![npm minzipped size](https://img.shields.io/bundlephobia/minzip/canvas-tint-image)](https://www.npmjs.com/package/canvas-tint-image)
-[![dependencies](https://img.shields.io/david/dmnsgn/canvas-tint-image)](https://github.com/dmnsgn/canvas-tint-image/blob/main/package.json)
+[![npm minzipped size](https://img.shields.io/bundlephobia/minzip/canvas-tint-image)](https://bundlephobia.com/package/canvas-tint-image)
+[![dependencies](https://img.shields.io/librariesio/release/npm/canvas-tint-image)](https://github.com/dmnsgn/canvas-tint-image/blob/main/package.json)
 [![types](https://img.shields.io/npm/types/canvas-tint-image)](https://github.com/microsoft/TypeScript)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-fa6673.svg)](https://conventionalcommits.org)
 [![styled with prettier](https://img.shields.io/badge/styled_with-Prettier-f8bc45.svg?logo=prettier)](https://github.com/prettier/prettier)
