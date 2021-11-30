@@ -38,7 +38,7 @@ const context = getCanvasContext("2d", {
 
 (async () => {
   const image = await AsyncPreloader.loadImage({ src: "image.jpg" });
-  context.drawImage(tintImage(image, "#f00", 0.5), 0, 0);
+  context.drawImage(canvasTintImage(image, "#f00", 0.5), 0, 0);
 })();
 ```
 
