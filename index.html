@@ -31,10 +31,10 @@
     <main>
       <h1>canvas-tint-image</h1>
     </main>
-    <script async src="web_modules/es-module-shims.js"></script>
-    <script src="web_modules/import-map.json" type="importmap"></script>
+    <script async src="web_modules/es-module-shims.js" type="module"></script>
+    <script src="web_modules/import-map.json" type="importmap-shim"></script>
 
-    <script type="module">
+    <script type="module-shim">
       import canvasTintImage from "./index.js";
       import canvasContext from "canvas-context";
       import AsyncPreloader from "async-preloader";
