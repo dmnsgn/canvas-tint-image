@@ -1,6 +1,6 @@
 {
   "name": "canvas-tint-image",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A one trick pony package to tint an image with a canvas 2D context.",
   "keywords": [
     "canvas",
@@ -11,7 +11,10 @@
   ],
   "homepage": "https://github.com/dmnsgn/canvas-tint-image",
   "bugs": "https://github.com/dmnsgn/canvas-tint-image/issues",
-  "repository": "dmnsgn/canvas-tint-image",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmnsgn/canvas-tint-image.git"
+  },
   "funding": [
     {
       "type": "individual",
