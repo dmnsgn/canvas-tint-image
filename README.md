@@ -36,10 +36,8 @@ const context = getCanvasContext("2d", {
   height: 100,
 });
 
-(async () => {
-  const image = await AsyncPreloader.loadImage({ src: "image.jpg" });
-  context.drawImage(canvasTintImage(image, "#f00", 0.5), 0, 0);
-})();
+const image = await AsyncPreloader.loadImage({ src: "image.jpg" });
+context.drawImage(canvasTintImage(image, "#f00", 0.5), 0, 0);
 ```
 
 ## API
